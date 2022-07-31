@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: mysql/mysql-server:8.0.28
+    restart: always
+    volumes:
+      - db-volume:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: transaction_test
+      MYSQL_USER: transaction_test
+      MYSQL_PASSWORD: transaction_test
+    ports:
+      - "3306:3306"
+
+volumes:
+  db-volume:
